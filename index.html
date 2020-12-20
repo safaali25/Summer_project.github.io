@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html ng-app="Easytravel">
+
+<head>
+  <title>Easytravel</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="images/smt.png" type="image" rel="shortcut icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body ng-cloak>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="Website Logo" width="200px" height="50px">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="bottom" title="885, Sector- 14">
+          <i class="fa fa-map-marker" aria-hidden="true"></i> Gurgaon, India</a>
+        <a href="tel:+91-7503541191" class="navbar-brand phone" data-toggle="tooltip" data-placement="bottom" title="Click me to call">
+          <i class="fa fa-phone" aria-hidden="true"></i> Call us! </a>
+          <a ng-href="https://form.jotform.com/203542176384456" class="navbar-brand">
+            <button class="btn btn-default">USER LOGIN</button>
+      </a>
+      </ul>
+    </div>
+  </nav>
+  <hr>
+  
+  <!-- <div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <img src="images/logo.png" class="img-responsive" alt="spicemytravel">
+    </div>
+  </div>
+</div><br/> -->
+  <!--header end-->
+
+  <div class="container" ng-controller="slider">
+    <div class="row">
+      <!-- <div class="col-md-4 col-sm-4 col-xs-12 formed animated fadeInLeft" data-form-type="formoid">
+        <div data-form-alert="true" class="hides">
+          <div hidden="" data-form-alert-success="true" class="alert alert-form alert-success text-xs-center">Thanks for filling out form!</div>
+        </div>
+        <h4 style="color:red" class="animated flash infinite">GET A CALL BACK!</h4>
+        <form class="form-horizontal" method="post" data-form-title="GET A CALL BACK!" action="">
+          <input type="hidden" value="EQacKR4rRCe2rtQIMGwPWbIhys0WUp/sQbG8ZkHQgsJ6XM4/cVgp4WBZBrcKKLjD4ZFsgqMOxoeunZUskOtQQBvLikDr2vAEbIgbebqbcuaUcNHhVwCi7Boaesb1uvP+"
+            data-form-email="true">
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Enter name" name="name" required="required" data-form-field="Name" id="form1-0-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input type="email" class="form-control" placeholder="Enter email" name="email" required="required" data-form-field="Email"
+                id="form1-0-email">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input type="number" class="form-control" placeholder="Enter mobile number" name="contact" required="required" data-form-field="Phone"
+                id="form1-0-phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <textarea class="form-control" rows="3" placeholder="Enter message.." required="required" data-form-field="Message" id="form1-0-message"></textarea>
+            </div>
+
+
+
+            
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div> -->
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li ng-repeat="no in images" data-target="#myCarousel" data-slide-to="{{no.number}}"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <a href="#">
+                <img src="images/banner1.jpg" alt="banner1" class="img-responsive">
+              </a>
+            </div>
+
+            <div class="item" ng-repeat="imagess in images">
+              <a href="#">
+                <img ng-src="{{imagess.image}}" class="img-responsive">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <!--packages-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <img src="images/offertag.jpg" alt="offertag" class="img-responsive">
+          </div>
+          <div class="col-md-9 col-sm-9">
+            <h3 class="middletext"><b>Adventure is worthwhile<b></h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+
+  <!--package offers-->
+
+  <div class="container" ng-controller="offer">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-12 col-md-offset-3 col-sm-offset-3">
+        <h4 class="text-right" style="color:#009688">Filter packages:</h4>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <input style="border:none;" class="form-control" name="srch-range" id="srch-range" type="range" min="1000" max="200000" step="5000"
+          value="100000" ng-model="priceTerm">
+        <h5 style="font-weight:400">Set Max Price:
+          <i class="fa fa-inr" aria-hidden="true"></i>
+          <span style="font-weight:100"> {{priceTerm}} </span>
+        </h5>
+      </div>
+      <span class="between_search">&nbsp;</span>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <div style="position:relative">
+          <input class="form-control" placeholder="search location..." name="srch-term" id="srch-term" type="text" ng-pattern="onlyLetters"
+            ng-model="searchText.name">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <!-- Wrapper for slides -->
+      <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="package in product | maxPrice:priceTerm | filter:searchText | orderBy: '' as filtered_result">
+        <div class="well">
+          <div style="position:relative">
+            <img ng-src="{{package.image}}" alt="banner1" class="img-responsive">
+            <img src="images/diwalitag.png" alt="offertag" class="img-responsive tag">
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 foot">
+              <h4 style="color:#333;">{{package.name}}</h4>
+              <h5>{{package.shift}}</h5>
+            </div>
+            
+          </div>
+          <hr/>
+          <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-8 foot">
+              <span style="font-weight:400;font-size:18px;">
+                <i class="fa fa-inr" aria-hidden="true"></i>
+                <span style="font-weight:bold;color:#333;" class="valuetext"> {{package.newprice}}</span>
+              </span>&nbsp;
+              <span style="font-weight:400;text-decoration: line-through;" class="valuetext">
+                <i class="fa fa-inr" aria-hidden="true" style="text-decoration: line-through;"></i>
+                <span style="font-weight:400;" class="valuetext"> {{package.lastprice}}</span>
+              </span>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 foot">
+              <span style="font-weight:400;color:#888" class="valuetext">Save:
+                <span class="valuetext" style="font-weight:400;font-size:18px;color:#009688">{{100-package.newprice*100/package.lastprice | number : 0}}%</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 foot">
+              <h5 style="font-weight:bold" class="valuetext">Includes:
+                <span style="font-weight:100">{{package.includes}}</span>
+              </h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 foot">
+              <a ng-href="{{package.link}}">
+                <button class="btn btn-default">Buy Deal</button>
+              </a>
+            </div>
+          </div>
+         
+        </div>
+
+      </div>
+      <div class="alert alert-info" ng-show="filtered_result.length == 0">
+        Note in Summer Offer! Try Our regular packages
+        <a href="#" onmouseover='this.style.textDecoration="none"'>
+          <strong>Here!</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+  <br/>
+
+  <!--footer starts-->
+  <div class="container-fluid" style="background-color:#434A4B;color:#fff">
+    <div class="row fontstyle">
+      <div class="col-md-3 col-md-offset-1 foot">
+        <br/>
+        <br/>
+        <h5>PRODUCT
+          <hr class="horiline1" />
+        </h5>
+        <br/>
+        <h5>
+          <a href="#" class="footertext">Vacations in India</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Vacations in Abroad</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Hotels in India</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Hotels in Abroad</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Sightseeing</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Flights + Hotel Deals</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Flights</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Transport</a>
+        </h5>
+      </div>
+
+      <div class="col-md-3 foot">
+        <br/>
+        <br/>
+        <h5>ABOUT WEBSITE
+          <hr class="horiline" />
+        </h5>
+        <br/>
+        <h5>
+          <a href="#" class="footertext">About Us</a>
+        </h5>
+        <h5>
+          <a href="https://form.jotform.me/81360683161454" class="footertext">Contact Us</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Payments and Cancellations</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">Terms and Conditions</a>
+        </h5>
+        <h5>
+          <a href="https://www.payumoney.com/paybypayumoney/#/277659" class="footertext">
+            <img src="images/payu.png" alt="payU" style="width:60%">
+          </a>
+        </h5>
+        <h5>
+          <a href="" class="footertext">
+            <img src="images/cards.png" alt="payU" style="width:60%">
+          </a>
+          <i class="fa fa-info-circle onetooltip" data-toggle="tooltip" data-placement="top" title="Please note: There would be extra charges for paying through PayUMoney. For exact charges kindly check our payment policy. There are no extra charges if you pay directly to our bank account. Contact us for any query..."
+            aria-hidden="true"></i>
+        </h5>
+      </div>
+
+      <div class="col-md-3 foot">
+        <br/>
+        <br/>
+        <h5>EASYTRAVEL
+          <hr class="horiline" />
+        </h5>
+        <br/>
+        <h5>
+          <a href="" class="footertext">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <span> Address: Boring Road, Patna, Bihar, India</span>
+          </a>
+        </h5>
+        <h5>
+          <a href="" class="footertext">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i> E-mail: info@easytravel.com</a>
+        </h5>
+        <h5>
+          <a href="tel:+91-1244648578" class="footertext">
+            <i class="fa fa-phone" aria-hidden="true"></i> Telephone: +91 1111111</a>
+        </h5>
+        <h5>
+          <a href="tel:+91-9811289910" class="footertext">
+            <i class="fa fa-mobile" aria-hidden="true"></i> Mobile: +91 5659237489</a>
+        </h5>
+      </div>
+
+      <div class="col-md-3 foot">
+        <br/>
+        <br/>
+        <h5>SUBSCRIBE
+          <hr class="horiline1" />
+        </h5>
+        <br/>
+        <h5>
+          <a href="#" class="footertext">
+            <img src="images/fb.png" alt="facebook" height="25px" width="25px"> facebook</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">
+            <img src="images/tw.png" alt="twitter" height="25px" width="25px"> twitter</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">
+            <img src="images/you.png" alt="youtube" height="25px" width="25px"> youtube</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">
+            <img src="images/in.png" alt="linkedin" height="25px" width="25px"> linkedin</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">
+            <img src="images/goo.png" alt="google+" height="25px" width="25px"> google+</a>
+        </h5>
+        <h5>
+          <a href="#" class="footertext">
+            <img src="images/ins.png" alt="instagram" height="25px" width="25px"> instagram</a>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid copyright">
+    <div class="row">
+      <div class="col-md-11 col-md-offset-1">
+        © COPYRIGHT - 2018  EASYTRAVEL . ALL RIGHTS RESERVED.  POWERED BY EASYTRAVEL.
+      </div>
+    </div>
+  </div>
+
+
+  <div class="scroll-top-wrapper ">
+    <span class="scroll-top-inner">
+      <i class="fa fa-2x fa-arrow-circle-up"></i>
+    </span>
+  </div>
+  <script src="js/jquery.touchSwipe.min.js"></script>
+  <script src="js/angular.min.js" type="text/javascript"></script>
+  <script src="js/app.js" type="text/javascript"></script>
+  <script src="js/data.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/formoid.min.js" type="text/javascript"></script>
+
+  <script>
+    //carousel touch id
+    $("#myCarousel").swipe({
+      swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+        if (direction == 'left') $(this).carousel('next');
+        if (direction == 'right') $(this).carousel('prev');
+      },
+      allowPageScroll: "vertical"
+    });
+
+    //tooltip
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    //scroll top
+    $(document).ready(function () {
+
+      $(function () {
+
+        $(document).on('scroll', function () {
+
+          if ($(window).scrollTop() > 100) {
+            $('.scroll-top-wrapper').addClass('show');
+          } else {
+            $('.scroll-top-wrapper').removeClass('show');
+          }
+        });
+
+        $('.scroll-top-wrapper').on('click', scrollToTop);
+      });
+
+      function scrollToTop() {
+        verticalOffset = typeof (verticalOffset) != 'undefined' ? verticalOffset : 0;
+        element = $('body');
+        offset = element.offset();
+        offsetTop = offset.top;
+        $('html, body').animate({
+          scrollTop: offsetTop
+        }, 500, 'linear');
+      }
+    });
+
+    //alert
+    $(document).ready(function () {
+      $('.alert').delay(1000).fadeOut();
+    });
+
+    //alert type
+    $(document).ready(function () {
+      $("form").submit(function () {
+        setTimeout(function () {
+          $(".hides").hide();
+        }, 5000);
+      });
+    });
+  </script>
+</body>
+
+</html>
